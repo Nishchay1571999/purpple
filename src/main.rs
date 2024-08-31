@@ -1,22 +1,21 @@
+mod blockchain;
+mod ui;
+mod utils;
+
+use blockchain::solana_client::SolanaClient;
 use gtk4::prelude::*;
-use gtk4::{Application, ApplicationWindow, Button};
-// use utils::utils
+use gtk4::Application;
+
 fn main() {
-    let app = Application::new(
-        Some("com.example.solana-ganache"),
-        Default::default(),
-    );
+    let app = Application::new(Some("com.example.solana-ganache"), Default::default());
 
     app.connect_activate(|app| {
-        let window = ApplicationWindow::new(app);
-        window.set_title("PURPPLE");
-        window.set_default_size(800, 600);
-
-        let button = Button::with_label("Create Account");
-        window.set_child(Some(&button));
-
+        let window = ui::main_window::create_main_window(app);
         window.show();
     });
+
+    let solana_client = SolanaClient::new("http://localhost:8899");
+    solana_client.get_latest_block();
 
     app.run();
 }
