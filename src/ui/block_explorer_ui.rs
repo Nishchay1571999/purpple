@@ -14,6 +14,7 @@ pub fn create_block_explorer_page() -> Box {
     search_bar.set_margin_start(10);
     search_bar.set_margin_end(10);
     search_bar.set_margin_bottom(10);
+    vbox.append(&search_bar);
     let details_box = Box::new(Orientation::Vertical, 10);
     let block_details_label = Label::new(Some("Block Details:"));
     let transaction_details_label = Label::new(Some("Transaction Details:"));
