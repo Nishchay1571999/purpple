@@ -7,7 +7,6 @@ use gtk4::{
 pub fn create_account_manager_page() -> Box {
     let vbox = Box::new(Orientation::Vertical, 10);
 
-    // Create the search bar
     let search_bar = SearchEntry::new();
     search_bar.set_placeholder_text(Some("Search accounts..."));
     search_bar.set_margin_top(10);
@@ -16,13 +15,12 @@ pub fn create_account_manager_page() -> Box {
     search_bar.set_margin_bottom(10);
     vbox.append(&search_bar);
 
-    // Create the account list view
     let account_list_view = TreeView::new();
     let account_list_store = ListStore::new(&[
         String::static_type(),
         String::static_type(),
         String::static_type(),
-    ]); // Example columns: Name, Address, Balance
+    ]);
 
     let name_column = TreeViewColumn::new();
     name_column.set_title("Account Name");
@@ -55,7 +53,6 @@ pub fn create_account_manager_page() -> Box {
     scrolled_window.set_margin_bottom(10);
     vbox.append(&scrolled_window);
 
-    // Create the account details panel
     let details_box = Box::new(Orientation::Vertical, 10);
     let name_label = Label::new(Some("Account Name:"));
     let address_label = Label::new(Some("Address:"));
@@ -69,7 +66,6 @@ pub fn create_account_manager_page() -> Box {
     details_box.set_margin_bottom(10);
     vbox.append(&details_box);
 
-    // Create action buttons
     let create_button = Button::with_label("Create Account");
     let import_button = Button::with_label("Import Account");
     let delete_button = Button::with_label("Delete Account");
@@ -86,10 +82,9 @@ pub fn create_account_manager_page() -> Box {
     action_box.set_margin_bottom(10);
     vbox.append(&action_box);
 
-    // Add network status indicator (optional)
     let status_label = Label::new(Some("Network Status:"));
     let status_indicator = Label::new(Some("●"));
-    status_indicator.set_css_classes(&["status-indicator"]); // You can use CSS to style this
+    status_indicator.set_css_classes(&["status-indicator"]);
     let status_box = Box::new(Orientation::Horizontal, 10);
     status_box.append(&status_label);
     status_box.append(&status_indicator);

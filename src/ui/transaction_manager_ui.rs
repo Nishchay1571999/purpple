@@ -7,7 +7,6 @@ use gtk4::{
 pub fn create_transaction_manager_page() -> Box {
     let vbox = Box::new(Orientation::Vertical, 10);
 
-    // Create the search bar
     let search_bar = SearchEntry::new();
     search_bar.set_placeholder_text(Some("Search transactions..."));
     search_bar.set_margin_top(10);
@@ -16,14 +15,13 @@ pub fn create_transaction_manager_page() -> Box {
     search_bar.set_margin_bottom(10);
     vbox.append(&search_bar);
 
-    // Create the transaction history list
     let transaction_list_view = TreeView::new();
     let transaction_list_store = ListStore::new(&[
         String::static_type(),
         String::static_type(),
         String::static_type(),
         String::static_type(),
-    ]); // Columns: ID, Date, Amount, Status
+    ]);
 
     let id_column = TreeViewColumn::new();
     id_column.set_title("Transaction ID");
@@ -63,7 +61,6 @@ pub fn create_transaction_manager_page() -> Box {
     scrolled_window.set_margin_bottom(10);
     vbox.append(&scrolled_window);
 
-    // Create the transaction details panel
     let details_box = Box::new(Orientation::Vertical, 10);
     let id_label = Label::new(Some("Transaction ID:"));
     let sender_label = Label::new(Some("Sender:"));
@@ -84,7 +81,6 @@ pub fn create_transaction_manager_page() -> Box {
     details_box.set_margin_bottom(10);
     vbox.append(&details_box);
 
-    // Create initiate new transaction form
     let initiate_box = Box::new(Orientation::Vertical, 10);
     let sender_entry = Entry::new();
     sender_entry.set_placeholder_text(Some("Sender Account"));
@@ -108,7 +104,6 @@ pub fn create_transaction_manager_page() -> Box {
     initiate_box.set_margin_bottom(10);
     vbox.append(&initiate_box);
 
-    // Create transaction status monitor
     let status_monitor_box = Box::new(Orientation::Vertical, 10);
     let monitor_label = Label::new(Some("Ongoing Transactions:"));
 
@@ -119,10 +114,9 @@ pub fn create_transaction_manager_page() -> Box {
     status_monitor_box.set_margin_bottom(10);
     vbox.append(&status_monitor_box);
 
-    // Add network status indicator (optional)
     let status_label = Label::new(Some("Network Status:"));
     let status_indicator = Label::new(Some("●"));
-    status_indicator.set_css_classes(&["status-indicator"]); // Style using CSS
+    status_indicator.set_css_classes(&["status-indicator"]);
     let network_status_box = Box::new(Orientation::Horizontal, 10);
     network_status_box.append(&status_label);
     network_status_box.append(&status_indicator);

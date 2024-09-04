@@ -4,7 +4,6 @@ use gtk4::{Box, Button, ComboBoxText, Label, Orientation, SearchEntry};
 pub fn create_block_explorer_page() -> Box {
     let vbox = Box::new(Orientation::Vertical, 10);
 
-    // Create the top navbar
     let navbar = create_top_navbar();
     vbox.append(&navbar);
 
