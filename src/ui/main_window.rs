@@ -1,9 +1,7 @@
-// src/ui/main_window.rs
-
 use gtk4::prelude::*;
 use gtk4::{Application, ApplicationWindow, Box, Orientation, Stack, StackSwitcher};
 
-use super::{account_manager_ui, transaction_manager_ui};
+use super::{account_manager_ui, transaction_manager_ui,block_explorer_ui,terminal_ui};
 
 pub fn create_main_window(app: &Application) -> ApplicationWindow {
     let window = ApplicationWindow::new(app);
@@ -16,11 +14,15 @@ pub fn create_main_window(app: &Application) -> ApplicationWindow {
     stack_switcher.set_stack(Some(&stack));
     vbox.append(&stack_switcher);
     vbox.append(&stack);
-
-    // Create and add pages to the stack
+    let block_explorer_page = block_explorer_ui::create_block_explorer_page();
     let account_manager_page = account_manager_ui::create_account_manager_page();
     let transaction_manager_page = transaction_manager_ui::create_transaction_manager_page();
-
+    let terminal_page = terminal_ui::create_terminal_page();
+    stack.add_titled(
+        &block_explorer_page,
+        Some("block_explorer"),
+        "Block Explorer ",
+    );
     stack.add_titled(
         &account_manager_page,
         Some("account_manager"),
@@ -31,18 +33,25 @@ pub fn create_main_window(app: &Application) -> ApplicationWindow {
         Some("transaction_manager"),
         "Transaction Manager",
     );
-    // src/ui/main_window.rs
-
+    stack.add_titled(
+        &terminal_page,
+        Some("terminal_manager"),
+        "Terminal Manager",
+    );
     stack.connect_visible_child_name_notify(|stack| {
         if let Some(name) = stack.visible_child_name() {
             match name.as_str() {
                 "account_manager" => {
                     println!("Account Manager page is now visible");
-                    // Refresh account data
                 }
                 "transaction_manager" => {
                     println!("Transaction Manager page is now visible");
-                    // Refresh transaction data
+                }
+                "block_explorer" => {
+                    println!("Block Explorer page is now visible");
+                }
+                "transaction_manager" =>{
+                    println!("Terminal Manager")
                 }
                 _ => {}
             }
