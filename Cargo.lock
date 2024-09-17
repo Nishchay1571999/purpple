@@ -2595,7 +2595,7 @@ dependencies = [
 name = "purpple"
 version = "0.1.0"
 dependencies = [
- "gio",
+ "borsh 1.5.1",
  "glib",
  "gtk4",
  "solana-client",

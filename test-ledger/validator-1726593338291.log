@@ -1,0 +1,42 @@
+[2024-09-17T17:15:38.291961632Z INFO  solana_test_validator] solana-validator 1.17.31 (src:00000000; feat:3746964731, client:SolanaLabs)
+[2024-09-17T17:15:38.291988974Z INFO  solana_test_validator] Starting validator with: ArgsOs {
+        inner: [
+            "solana-test-validator",
+            "--rpc-port",
+            "8890",
+        ],
+    }
+[2024-09-17T17:15:38.292014182Z WARN  solana_perf] CUDA is disabled
+[2024-09-17T17:15:38.292029472Z INFO  solana_perf] AVX detected
+[2024-09-17T17:15:38.292033950Z INFO  solana_perf] AVX2 detected
+[2024-09-17T17:15:38.293054309Z INFO  solana_faucet::faucet] Faucet started. Listening on: 0.0.0.0:9900
+[2024-09-17T17:15:38.293065210Z INFO  solana_faucet::faucet] Faucet account address: 4v2M1cryVcCMCe8tkpfnCDL8sUnAyT3pwz5NCeckKQM8
+[2024-09-17T17:15:38.293384741Z INFO  solana_validator::admin_rpc_service] started admin rpc service!
+[2024-09-17T17:15:38.294505201Z INFO  solana_test_validator] Feature for 41tVp5qR1XwWRt5WifvtSQyuxtqQWJgEK8w91AtBqSwP deactivated
+[2024-09-17T17:15:38.309832429Z INFO  solana_core::validator] identity pubkey: D3MXzDzU7B6pDMcpJ5wTV9EUgTqnomapNrRz9D54Lcuu
+[2024-09-17T17:15:38.309846135Z INFO  solana_core::validator] vote account pubkey: 6iqujm9pgArDqHT182qM3GLQYmxfJg2jAz5ECNNrPF5P
+[2024-09-17T17:15:38.309860723Z WARN  solana_core::validator] authorized voter: 6iqujm9pgArDqHT182qM3GLQYmxfJg2jAz5ECNNrPF5P
+[2024-09-17T17:15:38.310415453Z INFO  solana_core::validator] Initializing sigverify...
+[2024-09-17T17:15:38.310426253Z INFO  solana_core::validator] Initializing sigverify done.
+[2024-09-17T17:15:38.310435040Z INFO  solana_core::validator] Cleaning accounts paths..
+[2024-09-17T17:15:38.310616366Z INFO  solana_core::validator] Cleaning accounts paths done. clean_accounts_paths took 168us
+[2024-09-17T17:15:38.310792212Z INFO  solana_core::validator] Cleaning orphaned account snapshot directories..
+[2024-09-17T17:15:38.310841637Z INFO  solana_core::validator] Cleaning orphaned account snapshot directories done. clean_orphaned_account_snapshot_dirs took 41us
+[2024-09-17T17:15:38.310852367Z INFO  solana_core::validator] Geyser plugin: accounts_update_notifier: false, transaction_notifier: false, entry_notifier: false
+[2024-09-17T17:15:38.310863178Z INFO  solana_core::system_monitor_service] Starting SystemMonitorService
+[2024-09-17T17:15:38.310931929Z INFO  solana_core::validator] loading ledger from "test-ledger"...
+[2024-09-17T17:15:38.312373313Z INFO  solana_core::validator] genesis hash: EpeNzyK4hJrn9YJsrvB3BGSXCoYtZPqGKiok9p7W3acK
+[2024-09-17T17:15:38.312403841Z ERROR solana_ledger::blockstore] Unable to increase the maximum open file descriptor limit to 1000000 from 1024
+[2024-09-17T17:15:38.312412167Z INFO  solana_ledger::blockstore] Maximum open file descriptors: 1024
+[2024-09-17T17:15:38.312416886Z INFO  solana_ledger::blockstore] Opening database at "test-ledger/rocksdb"
+[2024-09-17T17:15:38.645491638Z INFO  solana_ledger::blockstore] "test-ledger/rocksdb" open took 333ms
+[2024-09-17T17:15:38.647145337Z INFO  solana_ledger::bank_forks_utils] Initializing bank snapshots dir: test-ledger/snapshot
+[2024-09-17T17:15:38.647481088Z INFO  solana_runtime::snapshot_bank_utils] Loading bank from full snapshot archive: test-ledger/snapshot-201-JBwhGNrKjtXc361iX4f2QTPvXXc4XfYyVUo5fYpxxg1X.tar.zst, and incremental snapshot archive: None
+[2024-09-17T17:15:38.650944093Z INFO  solana_accounts_db::shared_buffer_reader] reading entire decompressed file took: 2314 us, bytes: 1298944, read_us: 2302, waiting_for_buffer_us: 0, largest fetch: 774656, error: Ok(0)
+[2024-09-17T17:15:38.651506257Z INFO  solana_accounts_db::hardened_unpack] unpacked 3 entries total
+[2024-09-17T17:15:38.651561923Z INFO  solana_accounts_db::hardened_unpack] unpacked 3 entries total
+[2024-09-17T17:15:38.652236101Z INFO  solana_accounts_db::hardened_unpack] unpacked 3 entries total
+[2024-09-17T17:15:38.652395596Z INFO  solana_runtime::snapshot_utils] snapshot untar took 3ms
+[2024-09-17T17:15:38.652475609Z INFO  solana_runtime::snapshot_utils] snapshot version: 1.2.0
+[2024-09-17T17:15:38.652525354Z INFO  solana_runtime::snapshot_bank_utils] Rebuilding bank from full snapshot /home/basement_wolfe/Desktop/projects/rust/purpple/test-ledger/snapshot/tmp-snapshot-archive-0eIpDC/snapshots/201/201 and incremental snapshot None
+[2024-09-17T17:15:38.667322319Z INFO  solana_accounts_db::accounts_db] rent_collector: RentCollector { epoch: 0, epoch_schedule: EpochSchedule { slots_per_epoch: 432000, leader_schedule_slot_offset: 432000, warmup: false, first_normal_epoch: 0, first_normal_slot: 0 }, slots_per_year: 78892314.984, rent: Rent { lamports_per_byte_year: 3480, exemption_threshold: 2.0, burn_percent: 50 } }

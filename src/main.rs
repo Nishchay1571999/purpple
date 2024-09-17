@@ -1,6 +1,7 @@
 mod blockchain;
-mod ui;
+mod views;
 mod utils;
+mod components;
 
 use blockchain::solana_client::SolanaClient;
 use gtk4::prelude::*;
@@ -10,7 +11,7 @@ fn main() {
     let app = Application::new(Some("com.example.solana-ganache"), Default::default());
 
     app.connect_activate(|app| {
-        let window = ui::main_window::create_main_window(app);
+        let window = views::main_window::create_main_window(app);
         window.show();
     });
 

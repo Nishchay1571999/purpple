@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gio = "0.20.1"
+borsh = "1.5.1"
 glib = "0.20.3"
 gtk4 = "0.9.1"
 solana-client = "2.0.8"
